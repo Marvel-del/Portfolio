@@ -1,10 +1,6 @@
 // ── MOBILE NAVBAR ──
 
 // Force desktop viewport on Chrome Desktop mode
-if (navigator.userAgent.includes("x86_64")) {
-  var meta = document.querySelector("meta[name='viewport']");
-  meta.setAttribute("content", "width=1024, initial-scale=0.69");
-}
 
 
 const menuIcon = document.querySelector(".menu-icon");
