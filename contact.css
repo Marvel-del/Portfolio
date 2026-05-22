@@ -1,0 +1,308 @@
+/* ── RESET ── */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  background:#050816;
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+/* ── NAVBAR ── */
+nav{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 24px;
+  background:rgba(5,8,22,0.95);
+  backdrop-filter:blur(12px);
+  z-index:999;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+  color:#4da3ff;
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* MOBILE FIRST — nav hidden, hamburger visible */
+.nav-links{
+  display:none;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links.active{
+  display:flex;
+  flex-direction:column;
+  position:absolute;
+  top:80px;
+  right:20px;
+  background:#081120;
+  width:200px;
+  border-radius:16px;
+  padding:20px;
+  gap:20px;
+  z-index:998;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.nav-links a:hover{ color:#4da3ff; }
+
+.menu-icon{
+  display:block;
+  font-size:30px;
+  cursor:pointer;
+  color:white;
+}
+
+/* ── SECTIONS ── */
+section{ padding:90px 24px; }
+
+.small-text{
+  color:#4da3ff;
+  letter-spacing:2px;
+  margin-bottom:20px;
+  font-size:13px;
+}
+
+/* ── CONTACT HERO ── */
+.contact-hero{
+  padding-top:150px;
+  text-align:center;
+  max-width:850px;
+  margin:auto;
+}
+
+.contact-hero h1{
+  font-size:34px;
+  line-height:1.3;
+  margin-bottom:25px;
+}
+
+.hero-description{
+  color:#b5b5b5;
+  line-height:2;
+  max-width:700px;
+  margin:auto;
+}
+
+/* ── CONTACT GRID ── */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:35px;
+}
+
+.contact-info h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.contact-text{
+  color:#b5b5b5;
+  line-height:2;
+  margin-bottom:35px;
+}
+
+.contact-card{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:24px;
+  padding:22px;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+  backdrop-filter:blur(10px);
+}
+
+.contact-card:hover{
+  transform:translateY(-5px);
+  border-color:#4da3ff;
+  box-shadow:0 0 30px rgba(77,163,255,0.12);
+}
+
+.icon-box{
+  width:60px;
+  height:60px;
+  border-radius:18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:rgba(77,163,255,0.1);
+  color:#4da3ff;
+  font-size:24px;
+  flex-shrink:0;
+}
+
+.contact-card h3{ margin-bottom:6px; font-size:18px; }
+.contact-card p{ color:#b5b5b5; line-height:1.7; }
+
+/* ── FORM ── */
+.contact-form-container{
+  display:flex;
+  justify-content:center;
+}
+
+.form-box{
+  width:100%;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:28px;
+  padding:35px;
+  backdrop-filter:blur(10px);
+}
+
+.form-box h2{ font-size:30px; margin-bottom:15px; }
+
+.form-text{ color:#b5b5b5; line-height:1.8; margin-bottom:30px; }
+
+.input-group{ margin-bottom:22px; }
+
+.input-group input,
+.input-group textarea{
+  width:100%;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:18px;
+  color:white;
+  font-size:15px;
+  outline:none;
+  transition:0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+  border-color:#4da3ff;
+  box-shadow:0 0 20px rgba(77,163,255,0.1);
+}
+
+.send-btn{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:#4da3ff;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.send-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 30px rgba(77,163,255,0.3);
+}
+
+/* ── CTA ── */
+.bottom-cta{
+  text-align:center;
+  padding-top:30px;
+  padding-bottom:100px;
+}
+
+.bottom-cta h2{ font-size:36px; margin-bottom:20px; line-height:1.4; }
+.bottom-cta p{ color:#b5b5b5; letter-spacing:1px; }
+
+/* ══════════════════════════════════════
+   DESKTOP MODE — added by script.js
+   when Chrome Desktop mode is detected
+══════════════════════════════════════ */
+body.desktop-mode .nav-links{
+  display:flex !important;
+  flex-direction:row;
+  position:static;
+  background:none;
+  width:auto;
+  padding:0;
+  gap:25px;
+}
+
+body.desktop-mode .menu-icon{ display:none !important; }
+
+body.desktop-mode section{ padding:90px 40px; }
+
+body.desktop-mode .contact-hero{ padding-top:140px; }
+
+body.desktop-mode .contact-hero h1{ font-size:48px; }
+
+body.desktop-mode .contact-grid{
+  grid-template-columns:1fr 1fr;
+  align-items:start;
+}
+
+/* ══════════════════════════════════════
+   FIREFOX DESKTOP MODE
+   (Firefox changes viewport width)
+══════════════════════════════════════ */
+@media(min-width:800px){
+  .nav-links{
+    display:flex !important;
+    flex-direction:row;
+    position:static;
+    background:none;
+    width:auto;
+    padding:0;
+    gap:25px;
+  }
+
+  .menu-icon{ display:none !important; }
+
+  .contact-hero{ padding-top:140px; }
+  .contact-hero h1{ font-size:48px; }
+
+  .contact-grid{
+    grid-template-columns:1fr 1fr;
+    align-items:start;
+  }
+}
+
+
+/* ══════════════════════════════════════
+   UPDATED DESKTOP MODE — matches Firefox
+══════════════════════════════════════ */
+body.desktop-mode .contact-hero{
+  padding-top:100px !important;
+  padding-bottom:30px !important;
+}
+
+body.desktop-mode .contact-hero h1{
+  font-size:36px !important;
+  line-height:1.3 !important;
+}
+
+body.desktop-mode .contact-grid{
+  grid-template-columns:1fr 1fr !important;
+  align-items:start !important;
+  gap:30px !important;
+}
+
+body.desktop-mode .contact-info h2{
+  font-size:28px !important;
+}
+
+body.desktop-mode .form-box{
+  padding:25px !important;
+}
+
+body.desktop-mode .form-box h2{
+  font-size:26px !important;
+}
+
+body.desktop-mode section{
+  padding:50px 30px !important;
+}

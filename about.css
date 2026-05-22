@@ -1,0 +1,420 @@
+/* ── RESET ── */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  background:#050816;
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+/* ── NAVBAR ── */
+nav{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 24px;
+  background:rgba(5,8,22,0.95);
+  backdrop-filter:blur(12px);
+  z-index:999;
+}
+
+.logo{
+  color:#4da3ff;
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* MOBILE FIRST — nav hidden, hamburger visible */
+.nav-links{
+  display:none;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links.active{
+  display:flex;
+  flex-direction:column;
+  position:absolute;
+  top:80px;
+  right:20px;
+  background:#081120;
+  width:200px;
+  border-radius:16px;
+  padding:20px;
+  gap:20px;
+  z-index:998;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{ color:#4da3ff; }
+
+.menu-icon{
+  display:block;
+  font-size:30px;
+  cursor:pointer;
+  color:white;
+}
+
+/* ── SECTIONS ── */
+section{ padding:80px 24px; }
+
+.small-text{
+  color:#4da3ff;
+  letter-spacing:2px;
+  margin-bottom:18px;
+  font-size:13px;
+}
+
+/* ── ABOUT HERO ── */
+.about-hero{
+  padding-top:140px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:50px;
+}
+
+.about-image{ display:flex; justify-content:center; }
+
+.about-image img{
+  width:200px;
+  height:200px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid #4da3ff;
+  box-shadow:0 0 40px rgba(77,163,255,0.3);
+}
+
+.about-text{ max-width:650px; }
+
+.about-text h1{
+  font-size:32px;
+  line-height:1.3;
+  margin-bottom:25px;
+}
+
+.about-text p{
+  color:#b5b5b5;
+  line-height:2;
+  margin-bottom:25px;
+  font-size:16px;
+}
+
+/* ── BUTTONS ── */
+.about-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.primary-btn{
+  padding:14px 28px;
+  background:#4da3ff;
+  color:white;
+  border:none;
+  border-radius:40px;
+  text-decoration:none;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.primary-btn:hover{ transform:translateY(-3px); }
+
+.secondary-btn{
+  padding:14px 28px;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:40px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.secondary-btn:hover{ background:rgba(255,255,255,0.05); }
+
+/* ── PROFILE ── */
+.profile-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:35px;
+}
+
+.profile-text{ max-width:650px; }
+
+.profile-text h2{
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+.profile-text p{
+  color:#b5b5b5;
+  line-height:2;
+  margin-bottom:25px;
+}
+
+.profile-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.stat-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:24px;
+  padding:30px;
+  backdrop-filter:blur(10px);
+}
+
+.stat-card h3{
+  font-size:32px;
+  color:#4da3ff;
+  margin-bottom:10px;
+}
+
+.stat-card p{ color:#b5b5b5; }
+
+/* ── EXPERTISE ── */
+.expertise-section h2{
+  font-size:32px;
+  margin-bottom:35px;
+}
+
+.expertise-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:25px;
+}
+
+.expertise-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:24px;
+  padding:30px;
+  transition:0.3s;
+}
+
+.expertise-card:hover{ transform:translateY(-5px); border-color:#4da3ff; }
+
+.expertise-card h3{ margin-bottom:18px; font-size:22px; }
+
+.expertise-card p{ color:#b5b5b5; line-height:1.9; }
+
+/* ── TIMELINE ── */
+.journey-section h2{ font-size:32px; margin-bottom:35px; }
+
+.timeline{ display:flex; flex-direction:column; gap:25px; }
+
+.timeline-item{
+  background:rgba(255,255,255,0.03);
+  border-left:3px solid #4da3ff;
+  padding:25px;
+  border-radius:18px;
+}
+
+.timeline-item span{
+  color:#4da3ff;
+  font-weight:bold;
+  display:block;
+  margin-bottom:10px;
+}
+
+.timeline-item p{ color:#b5b5b5; line-height:1.8; }
+
+/* ── ACHIEVEMENTS ── */
+.achievement-section h2{ font-size:32px; margin-bottom:35px; }
+
+.achievement-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:25px;
+}
+
+.achievement-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:24px;
+  padding:30px;
+  transition:0.3s;
+}
+
+.achievement-card:hover{ transform:translateY(-5px); border-color:#4da3ff; }
+.achievement-card h3{ margin-bottom:18px; }
+.achievement-card p{ color:#b5b5b5; line-height:1.9; }
+
+/* ── CTA ── */
+.cta-section{ text-align:center; }
+
+.cta-section h2{
+  font-size:36px;
+  line-height:1.4;
+  margin-bottom:20px;
+}
+
+.cta-section p{
+  color:#b5b5b5;
+  max-width:650px;
+  margin:auto;
+  line-height:2;
+  margin-bottom:35px;
+}
+
+/* ══════════════════════════════════════
+   DESKTOP MODE — added by script.js
+   when Chrome Desktop mode is detected
+══════════════════════════════════════ */
+body.desktop-mode .nav-links{
+  display:flex !important;
+  flex-direction:row;
+  position:static;
+  background:none;
+  width:auto;
+  padding:0;
+  gap:25px;
+}
+
+body.desktop-mode .menu-icon{ display:none !important; }
+
+body.desktop-mode section{ padding:80px 40px; }
+
+body.desktop-mode .about-hero{
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  padding-top:130px;
+  gap:50px;
+}
+
+body.desktop-mode .about-image img{
+  width:250px;
+  height:250px;
+}
+
+body.desktop-mode .about-text h1{ font-size:42px; }
+
+body.desktop-mode .profile-grid{
+  grid-template-columns:1fr 1fr;
+  align-items:start;
+}
+
+body.desktop-mode .expertise-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+body.desktop-mode .achievement-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+body.desktop-mode .timeline{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+/* ══════════════════════════════════════
+   FIREFOX DESKTOP MODE
+   (Firefox changes viewport width)
+══════════════════════════════════════ */
+@media(min-width:800px){
+  .nav-links{
+    display:flex !important;
+    flex-direction:row;
+    position:static;
+    background:none;
+    width:auto;
+    padding:0;
+    gap:25px;
+  }
+
+  .menu-icon{ display:none !important; }
+
+  .about-hero{
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    padding-top:130px;
+    gap:50px;
+  }
+
+  .about-image img{ width:250px; height:250px; }
+  .about-text h1{ font-size:42px; }
+
+  .profile-grid{
+    grid-template-columns:1fr 1fr;
+    align-items:start;
+  }
+
+  .expertise-grid{ grid-template-columns:repeat(3,1fr); }
+  .achievement-grid{ grid-template-columns:repeat(2,1fr); }
+
+  .timeline{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+
+/* ══════════════════════════════════════
+   UPDATED DESKTOP MODE — matches Firefox
+══════════════════════════════════════ */
+body.desktop-mode .about-hero{
+  flex-direction:row !important;
+  justify-content:flex-start !important;
+  align-items:flex-start !important;
+  padding-top:100px !important;
+  gap:40px !important;
+}
+
+body.desktop-mode .about-image img{
+  width:180px !important;
+  height:180px !important;
+}
+
+body.desktop-mode .about-text{
+  flex:1 !important;
+  max-width:100% !important;
+}
+
+body.desktop-mode .about-text h1{
+  font-size:36px !important;
+  line-height:1.3 !important;
+}
+
+body.desktop-mode .profile-grid{
+  grid-template-columns:1fr 1fr !important;
+  align-items:start !important;
+  gap:30px !important;
+}
+
+body.desktop-mode .profile-text{
+  max-width:100% !important;
+}
+
+body.desktop-mode .expertise-grid{
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:15px !important;
+}
+
+body.desktop-mode .timeline{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:15px !important;
+}
+
+body.desktop-mode .achievement-grid{
+  grid-template-columns:repeat(2,1fr) !important;
+  gap:15px !important;
+}
+
+body.desktop-mode section{
+  padding:50px 30px !important;
+}

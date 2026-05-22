@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Marvellous Akachukwu</title>
+
+  <!-- CSS -->
+<link rel="stylesheet" href="contact.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+  <h2 class="logo">Marvellous Akachukwu</h2>
+  
+
+  <ul class="nav-links">
+
+  <li><a href="index.html">Home</a></li>
+
+  <a href="about.html">About</a>
+
+  <li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+
+
+  <div class="menu-icon">
+    ☰
+  </div>
+
+</nav>
+
+
+
+<!-- CONTACT HERO -->
+<section class="contact-hero">
+
+  <p class="small-text">
+    CONTACT • CONNECT • COLLABORATE
+  </p>
+
+  <h1>
+    Let’s Build Intelligent
+    Analytics Systems Together
+  </h1>
+
+  <p class="hero-description">
+
+    Open to analytics projects,
+    forecasting systems, dashboard engineering,
+    automation solutions, and business intelligence collaborations.
+
+  </p>
+
+</section>
+
+
+
+<!-- CONTACT GRID -->
+<section class="contact-section">
+
+  <div class="contact-grid">
+
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+
+      <h2>Get In Touch</h2>
+
+      <p class="contact-text">
+
+        Whether you need dashboards,
+        forecasting systems, reporting automation,
+        or business intelligence solutions,
+        feel free to reach out.
+
+      </p>
+
+
+
+      <!-- EMAIL -->
+      <a href="mailto:yourgmail@gmail.com"
+      class="contact-card">
+
+        <div class="icon-box">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+
+        <div>
+
+          <h3>Email</h3>
+
+          <p>marvellousakachukwu@gmail.com</p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- LINKEDIN -->
+      <a href="
+    https://linkedin.com/in/marvel-b64605304 "
+      class="contact-card">
+
+        <div class="icon-box">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+
+        <div>
+
+          <h3>LinkedIn</h3>
+
+          <p>Connect professionally</p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- GITHUB -->
+      <a href="https://github.com"
+      class="contact-card">
+
+        <div class="icon-box">
+          <i class="fa-brands fa-github"></i>
+        </div>
+
+        <div>
+
+          <h3>GitHub</h3>
+
+          <p>Explore my projects</p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- WHATSAPP -->
+      <a href="https://wa.me/2349029280043"
+      class="contact-card">
+
+        <div class="icon-box">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <div>
+
+          <h3>WhatsApp</h3>
+
+          <p>Quick communication</p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- LOCATION -->
+      <div class="contact-card">
+
+        <div class="icon-box">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <div>
+
+          <h3>Location</h3>
+
+          <p>Nigeria</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+    <div class="contact-form-container">
+
+      <div class="form-box">
+
+        <h2>Send Message</h2>
+
+        <p class="form-text">
+          Let’s discuss your next analytics or automation project.
+        </p>
+
+        <form action="/send" method="POST" id="contactForm">
+
+          <div class="input-group">
+
+            <input type="text"
+            name="name"
+            placeholder="Your Name"
+            required>
+
+          </div>
+
+
+          <div class="input-group">
+
+            <input type="email"
+            name="email"
+            placeholder="Your Email"
+            required>
+
+          </div>
+
+
+          <div class="input-group">
+
+            <textarea
+            name="message"
+            rows="7"
+            placeholder="Your Message"
+            required></textarea>
+
+          </div>
+
+
+          <button type="submit"
+          class="send-btn">
+
+            Send Message
+
+          </button>
+
+        </form>
+
+        <!-- SUCCESS / ERROR MESSAGE -->
+        <div id="formStatus" style="
+          margin-top: 1rem;
+          padding: .75rem 1rem;
+          border-radius: 8px;
+          font-size: .9rem;
+          display: none;
+        "></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- CTA -->
+<section class="bottom-cta">
+
+  <h2>
+    Building Smart Systems Through Data
+  </h2>
+
+  <p>
+    Forecasting • Automation • Dashboards • Business Intelligence
+  </p>
+
+</section>
+
+
+<script src="script.js"></script>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const btn = form.querySelector(".send-btn");
+    btn.textContent = "Sending…";
+    btn.disabled = true;
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("/send", { method: "POST", body: data });
+      const text = await res.text();
+
+      if (text.includes("Successfully")) {
+        status.style.display = "block";
+        status.style.background = "rgba(0,245,100,.12)";
+        status.style.border = "1px solid rgba(0,245,100,.3)";
+        status.style.color = "#00f564";
+        status.textContent = "✅ Message sent! I'll get back to you soon.";
+        form.reset();
+      } else {
+        throw new Error(text);
+      }
+
+    } catch (err) {
+      status.style.display = "block";
+      status.style.background = "rgba(255,80,80,.1)";
+      status.style.border = "1px solid rgba(255,80,80,.3)";
+      status.style.color = "#ff6b6b";
+      status.textContent = "❌ Something went wrong. Please try emailing me directly.";
+    }
+
+    btn.textContent = "Send Message";
+    btn.disabled = false;
+  });
+</script>
+</body>
+</html>
