@@ -23,6 +23,10 @@ def about():
 def contact():
     return render_template("contact.html")
 
+# ADD THIS 👇
+@app.route("/project")
+def project():
+    return render_template("project.html")
 
 # SEND MESSAGE
 @app.route("/send", methods=["POST"])
